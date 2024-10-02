@@ -13,11 +13,12 @@ Write the implementation of part A of the exercise below.
 # ------------- Method 1 ---------------
 def std_loops(numbers):
     """
-    Compute standard deviation of x using loops.
+    Compute standard deviation of numbers using loops.
 
     Parameters
     ----------
-    numbers: Sequence of numbers
+    numbers: list
+        A list of the numbers we want to evaluate 
 
     Returns
     -------
@@ -49,8 +50,10 @@ def std_loops(numbers):
     
     variencesquared = S - mean**2  # calcualte the variance
     
-    # Returning the standard deviation using the sqrt(function) form numpy
-    return np.sqrt(variencesquared)
+    # calculate the standard deviation
+    sd = np.sqrt(variencesquared)
+    
+    return sd
 
 
     
@@ -59,12 +62,13 @@ def std_loops(numbers):
 
 def std_builtin(numbers):
     """
-    Compute standard deviation of x using the built-in functions sum()
+    Compute standard deviation of numbers using the built-in functions sum()
     and len().
 
     Parameters
     ----------
-    x: Sequence of numbers
+    numbers: List
+       A list containing the numbers we want to evaluate
 
     Returns
     -------
@@ -81,18 +85,38 @@ def std_builtin(numbers):
     # Calcualte variance
     variance = S - mean**2
     # Returning the stander deviation
-    return np.sqrt(variance)
+    
+    # calucualte stardard deviation
+    sd = np.sqrt(variance)
+    
+    return sd
 
 
 # -------------- Method 3 -------------
 
 # A function using numpy's std function to find the standard deviation
 def std_numpy(numbers):
-    return np.std(numbers) 
+    """_summary_
+
+    Parameters:
+        numbers: List
+           a list of the numbers we want to evaluate
+
+    Returns:
+        sd: Float 
+          the standar deviation of Numbers
+    """
+    
+    sd = np.std(numbers) 
+    return sd
 
 
 
 def main(): 
+    
+    """A functini for executing the main program
+    """
+
     # Demonstrating that the fuctions provide the same result for all the functions
     num_lst = [i for i in range(1,5)]
     print(std_builtin(num_lst) == std_loops(num_lst) == std_numpy(num_lst))
