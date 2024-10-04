@@ -10,7 +10,7 @@ Write the implementation of part A of the exercise below.
 # ------------------------------------ Functions -----------------------------------
 
 
-# ------------- Method 1 ---------------
+# ------------- Method 1. Using no inbuilt functions---------------
 def std_loops(numbers):
     """
     Compute standard deviation of numbers using loops.
@@ -26,32 +26,27 @@ def std_loops(numbers):
         Standard deviation of the list of numbers.
     """
     
-    # --- Code block to add find the mean of the sequece of numbers ---
-    sum = 0  # Variable to store all the "part" sum 
+    # --- Code block to find sum of the sequence and sum of squares in the same sequence ---
+    sum = 0  # Variable to store all the "part" sums 
+    sumOfSquares = 0 # variable to contain the sum of sqares of the number in the sequence numbers 
     i = 0    # variable to count numbers
     
     # itterate through every number in numbers and add it to the sum  
     for num in numbers:
         sum += num  #updating sum
+        sumOfSquares += num**2  #update the sum of squares
         i += 1    # updation numbers itterated through
         
-    #calculating the mean 
+    # --- Caluclate the mean and mean of squares for the sequence ---
     mean = sum/i
-
-    # --- Code block to calculate the mean of squares
-    
-    sumOfSquares = 0 #variable to contain the sum of sqares of the number in the sequence numbers 
-    
-    # itterate through every number in numbers
-    for num in numbers: 
-        sumOfSquares += num**2  #update the sum of squares
-        
     S = sumOfSquares/i  # calcucate the mean of sqares
     
-    variencesquared = S - mean**2  # calcualte the variance
+    # Variance define as:
+    variance = S - mean**2
+
     
     # calculate the standard deviation
-    sd = np.sqrt(variencesquared)
+    sd = np.sqrt(variance)
     
     return sd
 
@@ -124,7 +119,7 @@ def main():
     
     
 
-# --------------------------------------------- Main program -------------------------------------------
+# ------------------------------------------ Main program -------------------------------------------
 
 main()
     
