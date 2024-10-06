@@ -7,10 +7,13 @@ TECH2 mandatory assignment - Part A
 Write the implementation of part A of the exercise below.
 """
 
-# ------------------------------------ Functions -----------------------------------
+# A progrom to calcutlte the standar deviation of a list of numbers using different approaches, and then demonstrate that they give similar answers
+
+# ------------------------------------------- Functions -----------------------------------------------
 
 
-# ------------- Method 1. Using no inbuilt functions---------------
+# ------------- Method 1 ---------------
+
 def std_loops(numbers):
     """
     Compute standard deviation of numbers using loops.
@@ -119,7 +122,7 @@ def main():
     
     
 
-# ------------------------------------------ Main program -------------------------------------------
+# ------------------------------------------ Main program ----------------------------------------------
 
 main()
     
